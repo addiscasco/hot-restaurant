@@ -1,63 +1,98 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <div class="jumbotron">
-        <h1 class="display-4">RESERVE</h1>
-        <p class="lead">Make a reservation!</p>
-        <hr class="my-4">
-        <p> Hurry before tables book up!</p>
-        <p class="lead">
-            <a href="/tables">
-                <button type="button" class="btn btn-primary btn-lg">View Tables</button>
-            </a>
-    
-            <a href="/">
-                <button type="button" class="btn btn-primary btn-lg">Home</button>
-            </a>
-        </p>
-      </div>
-      <form>
-        <div class="form-group">
-          <label for="exampleInputName">Name</label>
-          <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter name">
-          <small id="nameHelp" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPhoneNumber">Phone Number</label>
-          <input type="phoneNumber" class="form-control" id="exampleInputPhoneNumber" placeholder="Phone Number">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputUniqueID">Unique ID</label>
-            <input type="uniqueID" class="form-control" id="exampleInputUniqueID" placeholder="Unique ID">
-          </div>
-    
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <div class = "links">
-        <p><a href="/api/tables">API Table Link</a>
-            <p><a href="/api/waitlist">API Wait List</a>
-  
-      
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <h1 class="display-4">RESERVE</h1>
+    <p class="lead">Make a reservation!</p>
+    <hr class="my-4">
+    <p> Hurry before tables book up!</p>
+    <p class="lead">
+      <a href="/tables">
+        <button type="button" class="btn btn-primary btn-lg">View Tables</button>
+      </a>
+
+      <a href="/">
+        <button type="button" class="btn btn-primary btn-lg">Home</button>
+      </a>
+    </p>
   </div>
+  <form>
+    <div class="form-group">
+      <label for="nameU">Name</label>
+      <input type="name" class="form-control" id="nameU" aria-describedby="nameHelp" placeholder="Enter name">
+      <small id="nameHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="numU">Phone Number</label>
+      <input type="phoneNumber" class="form-control" id="numU" placeholder="Phone Number">
+    </div>
+    <div class="form-group">
+
+      <label for="emailU">Email</label>
+      <input type="email" class="form-control" id="emailU" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="uniqueIDU">Unique ID</label>
+      <input type="uniqueID" class="form-control" id="exampleInputUniqueID" placeholder="uniqueIDU">
+    </div>
+    <!-- submit button will send a post request through JQ-->
+    <button type="submit" class="btn btn-primary" id="submitReserve">Submit</button>
+
+
+
+  </form>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <div class="links">
+    <p>
+      <a href="/api/tables">API Table Link</a>
+      <p>
+        <a href="/api/waitlist">API Wait List</a>
+  </div>
+
+  <script>
+
+
+    $("#submitReserve").on("click", function () {
+      event.preventDefault();
+
+
+      var newReservation = {
+        name: $("#nameU").val(),
+        phoneNumber: $("#numU").val(),
+        email: $("#emailU").val(),
+        uniqueID: $("#uniqueIDU").val()
+      };
+
+      //data I want to send 
+      $.post("/reserve", newReservation, function (data) {
+
+        console.log(data);
+      });
+
+
+    });
+  </script>
+
 </body>
 
 
