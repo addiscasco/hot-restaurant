@@ -20,76 +20,72 @@
     <title>tables</title>
 </head>
 
-<div class="jumbotron">
-    <h1 class="display-4">Tables</h1>
-    <p class="lead"> Current Reservations and Waiting list </p>
-    <hr class="my-4">
-    <p>Again, book it today!</p>
-    <p class="lead">
-        <a href="/reserve">
-            <button type="button" class="btn btn-primary btn-lg">Make Reservation</button>
-        </a>
-
-        <a href="/">
-            <button type="button" class="btn btn-primary btn-lg">home</button>
-        </a>
-    </p>
-
-
-    <!--Current reservations -->
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">Current Reservations</h4>
-        </div>
-        <div class="panel-body" id="tableSection">
-        </div>
-    </div>
-
-    <!--wait list-->
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">Waiting List</h4>
-        </div>
-        <div class="panel-body" id="waitlistSection">
-        </div>
-    </div>
-</div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <p>
-            <a href="/api/tables">API Table</a> |
-            <a href="/api/waitlist">API Wait List</a>
-        </p>
-    </div>
-</footer>
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-
-<script>
-
-    $.get("/api/tables", function (data) {
-
-        console.log(data);
-        
-
-
-    });
-
-    
-
-
-
-
-</script>
-
-
 <body>
 
+    <div class="jumbotron">
+        <h1 class="display-4">Tables</h1>
+        <p class="lead"> Current Reservations and Waiting list </p>
+        <hr class="my-4">
+        <p>Again, book it today!</p>
+        <p class="lead">
+            <a href="/reserve">
+                <button type="button" class="btn btn-primary btn-lg">Make Reservation</button>
+            </a>
+
+            <a href="/">
+                <button type="button" class="btn btn-primary btn-lg">home</button>
+            </a>
+        </p>
+
+
+        <!--Current reservations -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Current Reservations</h4>
+            </div>
+            <div class="panel-body" id="tableSection">
+            </div>
+        </div>
+
+        <!--wait list-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Waiting List</h4>
+            </div>
+            <div class="panel-body" id="waitlistSection">
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <a href="/api/tables">API Table</a> |
+                <a href="/api/waitlist">API Wait List</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $.get("/api/tables", function (data) {
+
+            console.log("is it me?" + data);
+            // Add each train's data into the table
+
+            for (var i = 0; i < data.length; i++) {
+
+                $("#tableSection > tbody").append("<tr><td>" + data.name + "</td><td>" + data.phoneNumber + "</td><td>" +
+                    data.email + "</td><td>" + data.uniqueID + "</td><td>" + "</td></tr>");
+            };
+
+        });
+
+    </script>
 </body>
-
-
 </html>

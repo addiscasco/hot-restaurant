@@ -88,7 +88,13 @@
       $.post("/reserve", newReservation, function (data) {
 
         console.log(data);
-      });
+
+        if (data){
+          console.log("reservation is booked");
+        }
+
+    });
+    
 
 
     });
