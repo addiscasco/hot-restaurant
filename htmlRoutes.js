@@ -1,5 +1,7 @@
 var path = require("path");
 
+var tableData = require(path.join(__dirname, 'data/tableData'));
+
 module.exports = function(app){
 
 app.get("/", function(req, res) {
@@ -22,7 +24,7 @@ app.post("/reserve", function(req, res){
     tableData.push(newCustomer)
     console.log(newCustomer);
     
-    res.JSON(newCustomer)
+    res.json(newCustomer)
 
 })
 }
