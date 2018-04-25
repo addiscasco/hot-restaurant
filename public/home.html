@@ -21,21 +21,30 @@
 </head>
 
 <div class="jumbotron">
-        <h1 class="display-4">HOT RESTAURANT</h1>
-        <p class="lead"> Book your seat! </p>
-        <hr class="my-4">
-        <p>Again, book it today!</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="/api/tables" onclick = "" role="button">View Tables</a>
-          <a class="btn btn-primary btn-lg" href="/api/waitlist" onclick = ""  role="button">Make Reservation</a>
-        </p>
-      </div>
+    <h1 class="display-4">HOME</h1>
+    <p class="lead"> Book your seat! </p>
+    <hr class="my-4">
+    <p>Again, book it today!</p>
 
-      <footer class="footer">
-            <div class="container">
-                  <p><a href="/api/tables">API Table</a> | <a href="/api/waitlist">API Wait List</a></p>
-            </div>
-          </footer>
+    <p class="lead">
+        <a href="/tables">
+            <button type="button" class="btn btn-primary btn-lg">View Tables</button>
+        </a>
+
+        <a href="/reserve">
+            <button type="button" class="btn btn-primary btn-lg">Make Reservation</button>
+        </a>
+    </p>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>
+            <a href="/api/tables">API Table</a> |
+            <a href="/api/waitlist">API Wait List</a>
+        </p>
+    </div>
+</footer>
 
 
 <body>
